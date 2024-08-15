@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-size: 10px;
+    font-family: "Poppins", sans-serif;
+}
+.top-data{
+    width: 100%;
+    padding: 3rem;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 1rem 1rem;
+    margin-bottom: 1rem;
+}
+.top-data h1{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.top-data p{
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+.top-data .input-data{
+    width: 40%;
+}
+.top-data .input-data input{
+    width: 100%;
+    padding: 0.7rem 0.6rem;
+    border: none;
+    outline: none;
+    border-radius: 1.4rem;
+}
+
+#data{
+    width: 60%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+#data li{
+    list-style: none;
+}
+#data .box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.6rem;
+}
+#data img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#data h1{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+#data p{
+    font-size: 0.8rem;
+    color: #757575;
+}
+.hide{
+    display: none;
+}
+
+@media(max-width: 768px){
+    #data{
+        width: 90%;
+    }
+    .top-data .input-data{
+        width: 60%;
+    }
+}
+@media(max-width: 450px){
+    .top-data{
+        padding: 1rem;
+    }
+    .top-data h1{
+        font-size: 1.3rem;
+    }
+    .top-data p{
+        font-size: 0.7rem;
+    }
+    .top-data .input-data{
+        width: 90%;
+    }
+    #data{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #data .box img{
+        width: 60px;
+        height: 60px;
+    }
+    #data h1{
+        font-size: 1rem;
+    }
+    #data p{
+        font-size: 0.6rem;
+    }
+}
