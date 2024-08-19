@@ -1,13 +1,19 @@
 // fetch data
 let display = document.getElementById("data");
 let userArray = [];
-let Todos = async () => {
-  let request = await fetch("https://api.github.com/users");
-  let response = await request.json();
-  console.log(response);
+let response = [];
 
-  // let  todos = response.filter((item, index) =>  index < 20 && item.completed == true);
-  let data = "";
+// get response from server
+let Users = async () => {
+  let request = await fetch("https://api.github.com/users");
+  response = await request.json();
+  console.log(response);
+  DisplayData();
+};
+console.log(response, "response");
+
+// Display data
+let DisplayData = () => {
   response.map((elem, index) => {
     let list = document.createElement("li");
     userArray.push(list);
@@ -22,26 +28,26 @@ let Todos = async () => {
           </div>
         </div>
         `;
-        display.appendChild(list)
+    display.appendChild(list);
   });
-//   display.innerHTML = data;
+  //   display.innerHTML = data;
+}
+// let  todos = response.filter((item, index) =>  index < 20 && item.completed == true);};
+console.log(userArray, "Muhammad");
 
-};
-console.log(userArray, "Muhammad")
 
-// Search filter
+// Search filter on 
 let search = document.getElementById("input-data");
-search.addEventListener('input', (e)=>{
-    let val = e.target.value;
-    console.log(val);
-    userArray.filter((curr)=>{
-        if(curr.innerText.toLowerCase().includes(val.toLowerCase())){
-            curr.classList.remove("hide");
-        }else{
-            curr.classList.add("hide");
-        }
-    })
-})
+search.addEventListener("input", (e) => {
+  let val = e.target.value;
+  console.log(val);
+  userArray.filter((curr) => {
+    if (curr.innerText.toLowerCase().includes(val.toLowerCase())) {
+      curr.classList.remove("hide");
+    } else {
+      curr.classList.add("hide");
+    }
+  });
+});
 
-
-Todos();
+Users();
